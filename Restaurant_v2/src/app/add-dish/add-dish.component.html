@@ -1,0 +1,147 @@
+<h1> Dodawanie dań</h1>
+<div class="formcontainer">
+    <button class="btn-back" (click)="goBack()">Go back</button>
+    <form [formGroup]="dishForm" (ngSubmit)="onSubmit()">
+
+        <label>
+            Nazwa:
+            <input formControlName="name" type="text" >
+            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                class="alert alert-danger">
+                <div *ngIf="name?.errors?.['required']">
+                    Name is required.
+                </div>
+                <div *ngIf="name?.errors?.['minlength']">
+                    Name must be at least 3 characters long.
+                </div>
+                <div *ngIf="name?.errors?.['maxlength']">
+                    Name cannot be longer than 20 characters long.
+                </div>
+            </div>
+        </label>
+
+        <label>
+            Kuchnia:
+            <select formControlName="cuisine">
+                <option *ngFor="let c of Dishes.getCuisines()" [ngValue]="c">{{c}}</option>
+            </select>
+            <div *ngIf="cuisine?.invalid && (cuisine?.dirty || cuisine?.touched)"
+                class="alert alert-danger">
+                <div *ngIf="cuisine?.errors?.['required']">
+                    Cuisine is required.
+                </div>
+            </div>
+        </label>
+
+        <label>
+            Typ:
+            <select formControlName="type">
+                <option *ngFor="let t of Dishes.getTypes()" [ngValue]="t">{{t}}</option>
+            </select>
+            <div *ngIf="type?.invalid && (type?.dirty || type?.touched)"
+                class="alert alert-danger">
+                <div *ngIf="type?.errors?.['required']">
+                    Type is required.
+                </div>
+            </div>
+        </label>
+
+        <label>
+            Kategoria:
+            <select formControlName="category">
+                <option *ngFor="let cat of Dishes.getCategories()" [ngValue]="cat">{{cat}}</option>
+            </select>
+            <div *ngIf="category?.invalid && (category?.dirty || category?.touched)"
+                class="alert alert-danger">
+                <div *ngIf="category?.errors?.['required']">
+                    Category is required.
+                </div>
+            </div>
+        </label>
+
+        <label>
+            Maksymalna ilość:
+            <input formControlName="quantity" type="number" >
+            <div *ngIf="quantity?.invalid && (quantity?.dirty || quantity?.touched)"
+                class="alert alert-danger">
+                <div *ngIf="quantity?.errors?.['required']">
+                    Quantity is required.
+                </div>
+                <div *ngIf="quantity?.errors?.['min']">
+                    Quantity must be at least 0.
+                </div>
+            </div>
+        </label>
+
+        <label>
+            Cena:
+            <input formControlName="price" type="number" >
+            <div *ngIf="price?.invalid && (price?.dirty || price?.touched)"
+                class="alert alert-danger">
+                <div *ngIf="price?.errors?.['required']">
+                    Price is required.
+                </div>
+                <div *ngIf="price?.errors?.['min']">
+                    Price must be at least 0.
+                </div>
+                <div *ngIf="price?.errors?.['max']">
+                    Price cannot be greater than 200.
+                </div>
+            </div>
+        </label>
+
+        <label for="description">Opis:</label>
+        <textarea formControlName="description" name="description" id="description" cols="10" rows="3"></textarea>
+        <div *ngIf="description?.invalid && (description?.dirty || description?.touched)"
+                class="alert alert-danger">
+                <div *ngIf="description?.errors?.['required']">
+                    Description is required.
+                </div>
+                <div *ngIf="description?.errors?.['minlength']">
+                    Description must be at least 5 characters long.
+                </div>
+                <div *ngIf="description?.errors?.['maxlength']">
+                    Description cannot be longer than 120 characters long.
+                </div>
+        </div>
+        <div formArrayName="ingredients" *ngFor="let ingredient of ingredients.controls; let i=index" class="grouping">
+            <label>
+                Składnik:
+                <input [formControlName]="i" type="text">
+                <button class="removeS" type="button" (click)="removeIngredient(i)"  id="remove_ingredient">X</button>
+                <div *ngIf="ingredient?.invalid && (ingredient?.dirty || ingredient?.touched)"
+                class="alert alert-danger">
+                    <div *ngIf="ingredient?.errors?.['required']">
+                        Ingredient is required.
+                    </div>
+                    <div *ngIf="ingredient?.errors?.['minlength']">
+                        Ingredient must be at least 3 characters long.
+                    </div>
+                </div>
+            </label>
+        </div>
+        <div><button type="button" (click)="addIngredient()">Dodaj składnik</button></div>
+
+        <div formArrayName="images" *ngFor="let image of images.controls; let j=index" class="grouping">
+            <label>
+                Zdjęcie:
+                <input [formControlName]="j" type="text" placeholder=".png or .jpg">
+                <button class="removeS" type="button" (click)="removeImage(j)"  id="remove_ingredient">X</button>
+                <div *ngIf="image?.invalid && (image?.dirty || image?.touched)"
+                class="alert alert-danger">
+                    <div *ngIf="image?.errors?.['required']">
+                        Image is required.
+                    </div>
+                    <div *ngIf="image?.errors?.['pattern']">
+                        Image link needs to be .png or .jpg.
+                    </div>
+                </div>
+            </label>
+        </div>
+        <div><button type="button" (click)="addImage()">Dodaj zdjęcie</button></div>
+
+        <div><button type="submit" id="submit_button" [disabled]="!dishForm.valid">Dodaj danie!</button><button (click)="onReset()">Zresetuj</button></div>
+
+    </form>
+</div>
+

@@ -1,0 +1,122 @@
+.body{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 150vh;
+    margin-top:45px;
+}
+header{
+    width: 100%;
+    background: lightgray;
+}
+.header{
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    text-decoration: underline;
+    font-size: 4rem;
+    color: black;
+}
+h2{
+    text-align: center;
+    margin: 0;
+}
+section{
+    flex-grow: 1;
+    width: 100%;
+    background: lightgray;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.item{
+    box-shadow: 5px -5px #333;
+    height: 95%;
+    width: 40%;
+    border: 3px solid white;
+    border-radius: 5px;
+    max-height: 600px;
+}
+.photo{
+    background: green;
+    height: 80%;
+    width: 100%;
+    background-color: #cccccc; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+#photo1{
+    background-image: url("https://drive.google.com/uc?export=view&id=1MXrpSkiLuMDDYkqo268WLStmN-fFDNBr");
+}
+#photo2{
+    background-image: url("https://drive.google.com/uc?export=view&id=1eTGjnGgJRCVOBP37i0HmhK_p32B5NWH6");
+}
+.description p {
+    text-align: center;
+}
+
+footer{
+    background: #333;
+    color:white;
+    display: flex;
+    gap:2vw;
+    padding: 1vw;
+}
+.localization{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap:10px;
+    padding: 10px;
+    background:#333;
+}
+.map{
+    box-shadow: 5px -5px #333;
+    border: 3px solid white;
+    border-radius: 5px;
+    height: 15vw;
+    width: 15vw;
+    background-image: url("https://drive.google.com/uc?export=view&id=1gOwCdIDvdewZgKi-yU8eyCqQY9HtsVce");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+.info{
+    display: flex;
+    flex-direction: column;
+}
+.info span{
+    text-align: center;
+    color:white;
+}
+
+
+@media(max-width:900px){
+    .body{
+        height: 250vh;
+    }
+    section{
+        flex-direction: column;
+        gap:10px;
+    }
+    .item{
+        width: 75vw;
+        height: 80vh;
+    }
+    .description p {
+        font-size: 1rem;
+    }
+    .map{
+        width: 30vw;
+        height: 30vw;
+    }
+}
+@media(min-width:1600px){
+    .description p {
+        font-size: 1.5rem;
+    }
+}

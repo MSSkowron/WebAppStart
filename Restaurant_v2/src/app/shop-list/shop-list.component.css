@@ -1,0 +1,25 @@
+.sList{
+    border-bottom: 2px solid black;
+    margin-top:45px;
+    padding: 10px;
+}
+h3{
+    font-size: 1.3rem;
+    text-align: center;
+}
+.order{
+    display: flex;
+    justify-content: center;
+}
+.btn-back{
+    background:#333;
+    color:white;
+    position: fixed;
+    top:10px;
+    right: 10px;
+    z-index: 5;
+    font-size: 1rem;
+}
+.btn-back:hover{
+    cursor: pointer;
+}

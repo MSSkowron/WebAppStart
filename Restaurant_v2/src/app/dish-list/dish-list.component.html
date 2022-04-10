@@ -1,0 +1,25 @@
+<button class="btn-back" (click)="goBack()">Go back</button>
+<app-form-filter></app-form-filter>
+<div class="currencyChosen">
+    <span>Wybierz walutę: </span>
+    <button class="currencyButton" (click)="dollarButton()">$</button>
+    <button class="currencyButton" (click)="euroButton()">€</button>
+</div>
+<div class="container">
+    <div class="item" *ngFor="let dish of Dishes.getDishes()| filterDishesPipe:filterData.searchName:filterData.searchCategory:filterData.searchCuisine:filterData.searchRating:filterData.searchType:filterData.searchMaxPrice:filterData.searchMinPrice:currencies.getValue() | paginate: { itemsPerPage: 4, currentPage: p }">
+        <app-dish
+        [id]="dish.id"
+        [name]="dish.name"
+        [cuisine]="dish.cuisine"
+        [type]="dish.type"
+        [category]="dish.category"
+        [quantity]="dish.quantity"
+        [price]="dish.price"
+        [images]="dish.images"
+        >
+        </app-dish>
+    </div>
+</div>
+<div class="pgnt">
+    <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+</div>

@@ -1,0 +1,20 @@
+.main{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.navbar-div{
+    display: flex;
+    gap:10px;
+}
+li{
+    background: lightgray;
+    list-style: none;
+}
+a{
+    padding: 3px;
+    text-decoration: none;
+    font-size: 2rem;
+    background: gray;
+    color: white;
+}

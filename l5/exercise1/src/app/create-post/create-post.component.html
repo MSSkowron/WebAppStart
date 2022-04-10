@@ -1,0 +1,39 @@
+<div >
+    <div>
+      <button class="btn" (click)="goBack()">Go back</button>
+      <h3>Create Post</h3>
+
+      <div class="form">
+
+        <div class="form-group">
+          <input type="number" 
+          min="0" 
+          onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" 
+          [(ngModel)]="postDetails.id" class="form-control" placeholder="Id" required>
+        </div>
+    
+        <div class="form-group">
+          <input type="number" 
+          min="0" 
+          onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"
+          [(ngModel)]="postDetails.userId" class="form-control" placeholder="UserID"
+          >
+        </div>
+    
+        <div class="form-group">
+          <input type="text" [(ngModel)]="postDetails.title" class="form-control" placeholder="Title" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" [(ngModel)]="postDetails.body" class="form-control" placeholder="Body" required>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn-submit" [disabled]="postDetails.id===''||postDetails.userId===''|| postDetails.title===''||postDetails.body==='' " (click)="onSubmit()">Create Post</button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+

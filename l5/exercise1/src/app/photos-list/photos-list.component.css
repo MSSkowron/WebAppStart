@@ -1,0 +1,19 @@
+a{
+    background: rgb(87, 87, 87);
+    color: white;
+    padding: 3px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+a:hover{
+    cursor: pointer;
+    background: #333;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 10px 20px;
+}
+
+tr{
+    border:5px solid black;
+}

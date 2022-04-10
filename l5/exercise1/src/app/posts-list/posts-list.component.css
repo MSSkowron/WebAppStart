@@ -1,0 +1,23 @@
+h3{
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 10px;
+    text-decoration: underline;
+}
+
+.btn{
+    position: fixed;
+    top:0;
+    right: 5px;
+    background: #333;
+    color:white;
+    font-size: 1.3rem;
+    margin:10px 0;
+    border:none;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #ddd;
+    color: black;
+}

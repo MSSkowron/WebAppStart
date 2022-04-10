@@ -1,0 +1,27 @@
+<div class="currencyChosen">
+    <span>Wybierz walutę: </span>
+    <button class="currencyButton" (click)="dollarButton()">$</button>
+    <button class="currencyButton" (click)="euroButton()">€</button>
+</div>
+<div class="container">
+    <div class="item" *ngFor="let dish of Dishes.dishList| filterDishesPipe:filterData.searchName:filterData.searchCategory:filterData.searchCuisine:filterData.searchRating:filterData.searchType:filterData.searchMaxPrice:filterData.searchMinPrice:currencies.getValue()">
+        <app-dish
+        [name]="dish.name"
+        [cuisine]="dish.cuisine"
+        [type]="dish.type"
+        [category]="dish.category"
+        [ingredients]="dish.ingredients"
+        [quantity]="dish.quantity"
+        [price]="dish.price"
+        [description]="dish.description"
+        [images]="dish.images"
+        [rating]="dish.rating"
+        [mostExpensiveDishes]="Dishes.mostExpensive()"
+        [leastExpensiveDishes]="Dishes.leastExpensive()"
+        (addToOrder)="add($event)"
+        (removeFromOrder)="remove($event)"
+        (removeDishFromList)="removeDish($event)"
+        >
+        </app-dish>
+    </div>
+</div>

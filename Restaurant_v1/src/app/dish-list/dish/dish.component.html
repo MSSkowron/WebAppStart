@@ -1,0 +1,69 @@
+<div class="dishContainer"
+    [class.bPrice]="isInMostExpensive()"
+    [class.lPrice]="isInLeastExpensive()"
+>   
+    <div class="head">
+        <div class="img procent" style="background-image:url({{images[0]}});"id="photo"></div>
+        <div class="procent">
+            <div class="item" id="name">{{name|uppercase}}</div>
+            <div class="item" id="cuisine">{{cuisine|uppercase}}</div>
+            <div class="item" id="category">{{category}}</div>
+            <div class="item" id="type">{{type}}</div>
+        </div>
+    </div>
+
+    <div class="item" id="ingredients">Składniki: {{ingredients.join(", ")}}.</div>
+    <div class="item" id="description">{{description}}</div>
+    <div class="item" id="price">Cena: {{(price*currencies.getValue()).toFixed(2)}} {{currencies.getSymbol()}}</div>
+    <div class="int">
+        <span class="quantity" *ngIf="quantity > 0"
+        [ngStyle]="{'color':quantity >3 ? 'green' : 'red'}">
+        Dostępne: {{quantity}} dań.
+        </span>
+        <span class="quantity" *ngIf="quantity===0"
+        [ngStyle]="{'color':'red'}">
+        Nie dostępne!
+        </span>
+        <button class="removeButton"
+        [disabled]="notInShopList()"
+        (click)="remove(name)"
+        >
+            -
+        </button>
+        <button class="addButton"
+        (click)="add(name)"
+        [disabled]="quantity===0"
+        >
+            +
+        </button>
+    </div>
+    <button id="removeDish"
+    (click)="removeDish(name)"
+    >Usuń!</button>
+    <div class="avg">Średnia ocen wynosi: {{rating}}</div>
+    <p [ngStyle]="{'display':wasRated ===false ? 'block' : 'none'}">
+        <i class="starX" (click)="rate(1)"></i>
+        <i class="starX" (click)="rate(2)"></i>
+        <i class="starX" (click)="rate(3)"></i>
+        <i class="starX" (click)="rate(4)"></i>
+        <i class="starX" (click)="rate(5)"></i>
+    </p>
+    <p [ngStyle]="{'display':wasRated === true ? 'block' : 'none'}">
+        <i class="star"
+        [class.hide]="rating<1"
+        (click)="rate(1)"></i>
+        <i class="star" 
+        [class.hide]="rating<2"
+        (click)="rate(2)"></i>
+        <i class="star" 
+        [class.hide]="rating<3"
+        (click)="rate(3)"></i>
+        <i class="star"
+        [class.hide]="rating<4"
+        (click)="rate(4)"></i>
+        <i class="star"
+        [class.hide]="rating<5"
+        (click)="rate(5)"></i>
+    </p>
+
+</div>

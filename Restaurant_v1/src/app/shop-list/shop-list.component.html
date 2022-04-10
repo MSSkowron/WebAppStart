@@ -1,0 +1,8 @@
+<div class="sList">
+    <h3
+    [ngStyle]="{'background':this.ShopList.orderCounter > 10 ? 'lightblue' : 'orange'}"
+    >Ilość zamówionych dań: {{this.ShopList.orderCounter}}.</h3>
+    <div class="order" *ngFor="let x of this.ShopList.getList()">{{x[0]}} x {{x[1]}}</div>
+
+    <h3>Do zapłaty: {{(this.ShopList.orderValue*this.currencies.getValue()).toFixed(2)}} {{this.currencies.getSymbol()}} </h3>
+</div>

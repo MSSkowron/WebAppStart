@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+#counter{
+    display: block;
+    text-align: center;
+    font-size: 5rem;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.buttons button{
+    margin: 0 15px;
+    font-size: 3rem;
+    border:3px solid black;
+}
+.buttons button:hover{
+    cursor: pointer;
+}
+#on{
+    background: rgb(31, 187, 31);
+    color: white;
+}
+#off{
+    background: red;
+    color:white;
+}
+#test{
+    background: black;
+    color:white;
+}

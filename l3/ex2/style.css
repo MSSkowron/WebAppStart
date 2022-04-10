@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+#One{
+    width: 26vw;
+    height: 26vw;
+    background: rgb(0, 132, 255);
+    border:3px solid black;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+#Two{
+    width: 80%;
+    height: 80%;
+    padding: 2vw;
+    background: red;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+#Three{
+    width: 70%;
+    height: 70%;
+    background: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+span{
+    font-size: 3rem;
+}
+#info{
+    font-size: 1.5rem;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 10px;
+    width: 10vw;
+    height: 4vw;
+    font-size: 1.2vw;
+    border:2px solid black;
+}

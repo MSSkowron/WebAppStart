@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 99vw;
+    height: 97vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#bl{
+    font-size: 40px;
+    display: block;
+}
+#bl:hover{
+    cursor: pointer;
+}
+#info{
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    font-size: 1.2rem;
+    
+}
+.activeMenu{
+    border:1px solid rgba(66, 68, 90, 1);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 8px 7px 68px -3px rgba(66, 68, 90, 1);
+}

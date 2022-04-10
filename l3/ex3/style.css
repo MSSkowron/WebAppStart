@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 20px;
+}
+.form-inline{
+    display: flex;
+    box-shadow: 2px 3px 3px grey;
+    border:1px solid grey;
+    padding: 20px;
+    border-radius: 10px;
+}
+.inputX{
+    margin-right: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+h3{
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+.form-control{
+    border-radius: 5px;
+    height: 30px;
+    font-size: 1rem;
+}
+#nameValid{
+    margin-left: 90px;
+    font-size: 1.4rem;
+    color:red;
+    text-decoration: underline;
+}
+#phoneValid{
+    font-size: 1.4rem;
+    color:red;
+    text-decoration: underline;
+    margin-left: 250px;
+}
+li{
+    width: 50%;
+    min-width: 450px;
+    max-width: 600px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    box-shadow: 1px 1px 3px grey;
+    border:1px solid grey;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: -40px;
+}
+.addButton{
+    font-size: 1.3rem;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px grey;
+    border:1px solid grey;
+    background: white;
+}
+.addButton:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+}
+.delButton{
+    justify-self: flex-end;
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px grey;
+    border:1px solid grey;
+    background: white;
+}
+.delButton:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+}

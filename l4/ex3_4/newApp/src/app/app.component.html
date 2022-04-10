@@ -1,0 +1,34 @@
+<nav>
+  <h1>Best actors!</h1>
+</nav>
+
+<div class="form">
+  <button class="add-button" (click)="onSwitchForm()" > + </button>
+  <div class="row" [class.drawer]="showForm">
+    <div class="input-field">
+      <input type="text" placeholder="Imię" [(ngModel)]="author.name"/>
+    </div>
+    <div class="input-field">
+      <input type="text" placeholder="Nazwisko" [(ngModel)]="author.lastname"/>
+    </div>
+    <div class="input-field">
+      <input type="text" placeholder="Tytuł ulubionego filmu" [(ngModel)]="author.favSentence"/>
+    </div>
+    <div class="input-field">
+      <button class="btn small" (click)="addAuthor()"
+      [disabled]="author.name===''||author.lastname===''||author.favSentence===''"
+      >Dodaj</button>
+    </div>
+  </div>
+</div>
+
+<div class="list">
+  <div class="item" *ngFor="let a of authors">
+    <div class="row">
+      <span class="name">{{a.name}} {{a.lastname}}</span>
+    </div>
+    <div class="row">
+      <span class="favSentence">{{a.favSentence}}</span>
+    </div>
+  </div>
+</div>

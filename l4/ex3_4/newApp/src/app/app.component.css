@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    margin: 0;
+    padding: 5px;
+    font-size: 2rem;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.drawer{
+    display:none;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.item{
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
+    border:1px solid black;
+    border-radius: 5px;
+}
+.name{
+    font-size: 2rem;
+    text-align: center;
+}
+.favSentence{
+    font-size: 1.2rem;
+}

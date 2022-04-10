@@ -1,0 +1,11 @@
+.sList{
+    border-bottom: 2px solid black;
+}
+h3{
+    font-size: 1.3rem;
+    text-align: center;
+}
+.order{
+    display: flex;
+    justify-content: center;
+}

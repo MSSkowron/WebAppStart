@@ -1,0 +1,215 @@
+.Notvisible{
+    display: none;
+}
+.dishContainer{
+    width: 350px;
+    max-height: 600px;
+    background: lightgray;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border:3px solid white;
+    border-radius: 10px;
+    display: flex;
+    gap:10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.head{
+    display: flex;
+    width: 100%;
+    height: 25vh;
+}
+.procent{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.img{
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 100%;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.item{
+    margin-bottom: 5px;
+}
+#name{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 2px;
+}
+#cuisine, #category, #type{
+    text-align: center;
+    padding: 2px;
+}
+#price{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.removeButton,.addButton{
+    font-size: 1rem;
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+}
+.removeButton{
+    margin-right: 5px;
+}
+.lPrice{
+    border:3px solid green;
+}
+.bPrice{
+    border:3px solid red;
+}
+.dishImg{
+    width: 100%;
+    overflow: hidden;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+p{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.star {
+    position: relative;
+    
+    display: inline-block;
+    width: 0;
+    height: 0;
+    
+    margin-left: .9em;
+    margin-right: .9em;
+    margin-bottom: .4em;
+    
+    border-right:  .3em solid transparent;
+    border-bottom: .7em  solid #FC0;
+    border-left:   .3em solid transparent;
+  
+    /* Controlls the size of the stars. */
+    font-size: 10;
+}
+.star:before, .star:after {
+      content: '';
+      
+      display: block;
+      width: 0;
+      height: 0;
+      
+      position: absolute;
+      top: .6em;
+      left: -1em;
+    
+      border-right:  1em solid transparent;
+      border-bottom: .7em  solid #FC0;
+      border-left:   1em solid transparent;
+    
+      transform: rotate(-35deg);
+}   
+
+.star:after {  
+      transform: rotate(35deg);
+}
+.star:hover{
+    cursor: pointer;
+}
+
+.starX {
+    position: relative;
+    
+    display: inline-block;
+    width: 0;
+    height: 0;
+    
+    margin-left: .9em;
+    margin-right: .9em;
+    margin-bottom: .4em;
+    
+    border-right:  .3em solid transparent;
+    border-bottom: .7em  solid rgb(201, 184, 138);
+    border-left:   .3em solid transparent;
+  
+    /* Controlls the size of the stars. */
+    font-size: 10;
+}
+.starX:before, .starX:after {
+      content: '';
+      
+      display: block;
+      width: 0;
+      height: 0;
+      
+      position: absolute;
+      top: .6em;
+      left: -1em;
+    
+      border-right:  1em solid transparent;
+      border-bottom: .7em  solid rgb(201, 184, 138);
+      border-left:   1em solid transparent;
+    
+      transform: rotate(-35deg);
+}   
+
+.starX:after {  
+      transform: rotate(35deg);
+}
+.starX:hover{
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
+
+
+#removeDish{
+    font-size: 1rem;
+    margin: 5px;
+}
+.avg{
+    text-align: center;
+}
+.showDetailsbtn{
+    background-color: rgb(235, 233, 233);
+    text-decoration: none;
+    color:black;
+    border:  1px solid black;
+    width: 60px;
+    text-align: center;
+}
+.showDetailsbtn:hover{
+    cursor: pointer;
+}
+@media(min-width:1600px){
+    .dishContainer{
+        width: 700px;
+        font-size: 1.3rem;
+    }
+    #name{
+        font-size: 1.7rem;
+    }
+    .showDetailsbtn{
+        font-size: 1.1rem;
+    }
+}
+@media(min-width:1200px){
+        .dishContainer{
+            width: 400px;
+        }
+    }
+@media(min-width:800px){
+    .dishContainer{
+        width: 450px;
+    }
+}

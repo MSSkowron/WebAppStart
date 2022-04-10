@@ -1,0 +1,134 @@
+<button class="btn-back" (click)="goBack()">GO BACK!</button> 
+<div class="mainContainer">
+    <div class="dishContainer" *ngIf="me">  
+        <div class="head">
+            <div class="procent">
+                <div class="item" id="name">{{me.name|uppercase}}</div>
+                <div class="item" id="cuisine">{{me.cuisine|uppercase}}</div>
+                <div class="item" id="category">{{me.category}}</div>
+                <div class="item" id="type">{{me.type}}</div>
+            </div>
+        </div>
+
+        <div class="item" id="ingredients">Składniki: {{me.ingredients.join(", ")}}.</div>
+        <div class="item" id="description">{{me.description}}</div>
+        <div class="item" id="price">Cena: {{(me.price*currencies.getValue()).toFixed(2)}} {{currencies.getSymbol()}}</div>
+        <div class="int">
+            <span class="quantity" *ngIf="me.quantity > 0"
+            [ngStyle]="{'color':me.quantity >3 ? 'green' : 'red'}">
+            Dostępne: {{me.quantity}} dań.
+            </span>
+            <span class="quantity" *ngIf="me.quantity===0"
+            [ngStyle]="{'color':'red'}">
+            Nie dostępne!
+            </span>
+            <button class="removeButton"
+            [disabled]="notInShopList()"
+            (click)="remove()"
+            >
+                -
+            </button>
+            <button class="addButton"
+            (click)="add()"
+            [disabled]="me.quantity===0"
+            >
+                +
+            </button>
+
+        </div>
+        <div class="avg">Liczba ocen: {{me.ratesCounter}}</div>
+        <div class="avg">Średnia: {{me.rating}}</div>
+        <p [ngStyle]="{'display':wasRated ===false ? 'block' : 'none'}">
+            <i class="starX" (click)="rate(1)"></i>
+            <i class="starX" (click)="rate(2)"></i>
+            <i class="starX" (click)="rate(3)"></i>
+            <i class="starX" (click)="rate(4)"></i>
+            <i class="starX" (click)="rate(5)"></i>
+        </p>
+        <p [ngStyle]="{'display':wasRated === true ? 'block' : 'none'}">
+            <i class="star"
+            [class.hide]="me.rating<1"
+            ></i>
+            <i class="star" 
+            [class.hide]="me.rating<2"
+            ></i>
+            <i class="star" 
+            [class.hide]="me.rating<3"
+            ></i>
+            <i class="star"
+            [class.hide]="me.rating<4"
+            ></i>
+            <i class="star"
+            [class.hide]="me.rating<5"
+            ></i>
+        </p>
+
+    </div>
+    <div class="slider" *ngIf="me">
+        <div class="pht" *ngFor="let image of me.images">
+            <div class="img" style="background-image:url({{image}});"id="photo"></div>
+        </div>
+    </div>
+</div>
+<h2>Oceń danie!</h2>
+<div class="messages" *ngIf="messages.length > 0">
+    <span *ngFor="let msg of messages">{{msg}}</span>
+</div>
+<div class="container">
+      <form (ngSubmit)="onSubmit()" #commentForm="ngForm">
+
+        <div class="form-group">
+          <label>Nick</label>
+          <input type="text" class="form-control" id="name"
+                 [(ngModel)]="model.nick" name="nick"
+                 #name="ngModel">
+        </div>
+  
+        <div class="form-group">
+          <label>Tytuł</label>
+          <input type="text" class="form-control" id="title"
+                 [(ngModel)]="model.title" name="title">
+        </div>
+        
+        <div class="form-group">
+          <label>Treść recenzji</label>
+          <textarea name="text" id="text" cols="59" rows="5"
+          [(ngModel)]="model.text">
+          </textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Data</label>
+            <input type="date" class="form-control" id="date"
+                   [(ngModel)]="model.date" name="date">
+          </div>
+        <div class="buttons">
+            <button type="submit" class="btn btn-success" [disabled]="!commentForm.form.valid">Wyślij</button>
+            <button type="button" class="btn btn-success" (click)="commentForm.reset()">Reset</button>
+        </div>
+      </form>
+</div>
+<div class="comments" *ngIf="me">
+    <h2 *ngIf="me.comments.length>0">
+        Recenzje
+    </h2>
+
+    <div class="wrap">
+        <div class="wrapchild" *ngFor="let a of me.comments">
+            <div class="comm" *ngIf="a.length===4">
+                <div class="row">
+                    <h3>{{a[0]}} <span class="date">{{a[3]}}</span></h3>
+                    <h4>{{a[1]}}</h4>
+                    <p>{{a[2]}}</p>
+                </div>
+            </div>
+            <div class="comm" *ngIf="a.length===3">
+                <div class="row">
+                    <h3>{{a[0]}} <span class="date">{{a[3]}}</span></h3>
+                    <h4>{{a[1]}}</h4>
+                    <p>{{a[2]}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<form>
+    <div class="item">
+        <h2>Nazwa dania</h2>
+        <input id="name" name="dishName" [(ngModel)]="filterData.searchName">
+    </div>
+    <div class="item">
+        <h2>Typ kuchni</h2>
+        <div class="buttons">
+            <button *ngFor="let cuisine of Dishes.getCuisines()"
+            (click) = "filterData.addCuisine(cuisine)">{{cuisine}}</button>
+        </div>
+    </div>
+    <div class="item">
+        <h2>Kategoria</h2>
+        <div class="buttons">
+            <button *ngFor="let category of Dishes.getCategories()"
+            (click) = "filterData.addCategory(category)">{{category}}</button>
+        </div>
+    </div>
+    <div class="item">
+        <h2>Typ dania</h2>
+        <div class="buttons">
+            <button *ngFor="let type of Dishes.getTypes()"
+            (click) = "filterData.addType(type)">{{type}}</button>
+        </div>
+    </div>
+    <div class="item">
+        <h2>Ocena</h2>
+        <div class="buttons">
+            <button *ngFor="let rating of Dishes.getRatings()"
+            (click) = "filterData.addRating(rating)">{{rating}}</button>
+        </div>
+    </div>
+    <div class="item">
+        <h2>Cena</h2>
+        <ng5-slider
+        [(value)]="filterData.searchMinPrice" [(highValue)]="filterData.searchMaxPrice" [options]="options"></ng5-slider>
+    </div>
+
+    <div class="buttons">
+        <button (click)="filterData.reset()">Reset</button> 
+    </div>
+</form>

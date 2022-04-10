@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu{
+    width: 250px;
+    display: block;
+    border-radius: 13px;
+    overflow: hidden;
+}
+.item{
+    border-top: 1px solid #ef584a;
+    overflow: hidden;
+}
+.btn{
+    display: block;
+    padding: 15px 20px;
+    background-color: #ff6f61;
+    color: #fff;
+    position: relative;
+
+}
+.btn:before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:10px solid #ff6f61;
+    bottom: -10px;
+    z-index: 1;
+    
+}
+
+.sub-menu{
+    background: #273057;
+    overflow: hidden;
+    transition: max-height 0.9s;
+    max-height: 0;
+}
+.sub-menu a{
+    display: block;
+    padding: 1.1em;
+    color: #fff;
+    font-size: 0.9em;
+    border-bottom: 1px solid #4d6197;
+    position: relative;
+    
+}
+.sub-menu a:before{
+    content: '';
+    opacity: 0;
+    transition: opacity 0.4s;
+
+}
+.sub-menu a:hover:before{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 10px;
+    left: 0;
+    top:0;
+    opacity: 1;
+    border-top: 25px solid transparent;
+    border-left: 10px solid white;
+    border-bottom: 25px solid transparent;
+}
+.sub-menu a:after{
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+.sub-menu a:hover:after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 10px;
+    right: 0px;
+    top:0;
+    opacity: 1;
+    border-top: 25px solid transparent;
+    border-right: 10px solid white;
+    border-bottom: 25px solid transparent;
+}
+.sub-menu a:hover{
+    background: #273057;
+    background: -moz-linear-gradient(top, #273057 0%, #273057 50%, #394c7f 51%, #394c7f 100%);
+    background: -webkit-linear-gradient(top, #273057 0%,#273057 50%,#394c7f 51%,#394c7f 100%);
+    background: linear-gradient(to bottom, #273057 0%,#273057 50%,#394c7f 51%,#394c7f 100%);
+    transition: all 0.3s;
+    border-bottom: 1px solid #394c7f;
+}
+
+.item:target .sub-menu{
+    max-height: 10em;
+}
+
+

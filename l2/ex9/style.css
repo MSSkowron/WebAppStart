@@ -1,0 +1,235 @@
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+html {
+  font-size: 0.8vw }
+
+body {
+  box-sizing: border-box;
+ }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.8;
+  color: gray;
+  padding: 0; }
+
+  section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 10rem 0;
+  }
+  .cards {
+    width: 30%;
+  }
+
+.heading {
+  font-size: 3vw;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .3rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+.head{
+  text-align: center;
+}
+
+
+
+.card {
+  position: relative;
+  width: 25vw;
+  height: 33vw; }
+.side {
+  height: 100%;
+  transition: all .6s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem grey }
+
+.front {
+      background-color: #fff; }
+.back {
+      transform: rotateY(180deg); }
+.back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+.back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.card:hover .front {
+    transform: rotateY(-180deg); }
+.card:hover .back {
+    transform: rotateY(0); }
+
+
+.picture {
+    background-size: cover;
+    height: 37%;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); 
+  }
+.picture-1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("https://drive.google.com/uc?export=view&id=1WKs7s3WoFk2Rg41M1ixGk4wHp7HMI4mf"); }
+.picture-2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url("https://drive.google.com/uc?export=view&id=1W3fCNrCNdynFf9Hidr6GUsyhjM6ixi3v"); }
+
+.card-heading {
+    font-size: 1.6vw;
+    font-weight: 300;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 20%;
+    right: 7%;
+    width: 50%; }
+.span {
+    padding: 1rem 2rem;
+     }
+
+.span1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); 
+    }
+
+.span2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); 
+    }
+
+.list {
+  padding: 3rem; 
+}
+.list ul {
+  list-style: none;
+  width: 100%;
+  margin: -1.75rem auto; 
+}
+.list ul li {
+    text-align: center;
+    font-size: 1.2vw;
+    padding: 1rem; 
+}
+.list ul li {
+  border-bottom: 1px solid #eee; 
+}
+.list ul li:last-child{
+  border-bottom: none;
+}
+.backside {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; 
+}
+.info {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8rem; }
+.only {
+    font-size: 3vw;
+    text-transform: uppercase; }
+.value {
+    font-size: 5vw;
+    font-weight: 100; }
+
+
+.btn, .btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  position: relative;
+  font-size: 1.6rem;
+  cursor: pointer;
+  background-color: #fff;
+  color: grey; }
+
+
+
+
+@media(max-width:1400px){
+  .picture {
+    height: 40%;
+  }
+  section{
+    justify-content: space-around;
+  }
+  .heading{
+    font-size: 4vw;
+  }
+  .span{
+    font-size: 2.5vw;
+  }
+  .list ul li{
+    font-size: 1.7vw;
+  }
+  .card{
+    width:35vw;
+    height: 49vw;
+  }
+  .side{
+    height:44vw ;
+  }
+}
+@media(max-width:1000px){
+  .heading{
+    font-size: 4vw;
+  }
+  .span{
+    font-size: 3.5vw;
+  }
+  .list ul li{
+    font-size: 3vw;
+  }
+  .only{
+    font-size: 6vw;
+  }
+  .value{
+    font-size: 9vw;
+  }
+  .card{
+    width:50vw;
+    height: 70vw;
+  }
+  .side{
+    height:70vw ;
+  }
+  .cards:first-child{
+    margin-bottom: 5rem;
+  }
+  section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.btn, .btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 3rem 4rem;
+  border-radius: 10rem;
+  position: relative;
+  font-size: 3rem;
+  cursor: pointer;
+  background-color: #fff;
+  color: grey; }
+
+}

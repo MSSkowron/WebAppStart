@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body{
+  padding: 1rem;
+  margin: 3rem auto;
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.card{
+  border-radius: 10px;
+  overflow: hidden;
+  width:20vw;
+  height: 33vw;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 3px 5px 5px grey;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  ;
+}
+.photo{
+  height: 35%;
+  background-repeat: no-repeat ;
+  background-size: cover;
+  background-position: center;
+}
+.photo1{
+  background-image: url("https://drive.google.com/uc?export=view&id=1y56RfW5vPEFkSe19WL4RgUy9dGKc5K2D") ;
+}
+.photo2{
+  background-image: url("https://drive.google.com/uc?export=view&id=1DJpY4LhGL702Pq4FjjRoQlYYDfwrUHaC") ;
+}
+.photo3{
+  background-image: url("https://drive.google.com/uc?export=view&id=1ejHHtEWtRCWBmPpMen-uhIBkgB3NELI2") ;
+}
+.photo4{
+  background-image: url("https://drive.google.com/uc?export=view&id=1pQQeHr02B06VaVz6w9kDtNtr9NohacvR") ;
+}
+.photo5{
+  background-image: url("https://drive.google.com/uc?export=view&id=1eQ-GtZiDruvrZ_EKk3tYNAQmKmZSDJXI") ;
+}
+.photo6{
+  background-image: url("https://drive.google.com/uc?export=view&id=1D7KgPQTtU9SS4n41JwJ8J1W7BJqPL0tE");
+}
+.photo7{
+  background-image: url("https://drive.google.com/uc?export=view&id=1pS64fql3DtmWif1CSnw9r3z3n_kcGKCX") ;
+}
+.photo8{
+  background-image: url("https://drive.google.com/uc?export=view&id=1CeVFszhd09Yeg1VV5JBzWc28n_v3OrgQ") ;
+}
+.photo9{
+  background-image: url("https://drive.google.com/uc?export=view&id=1AYzW28pIFOBZUcl9GHbvnODtV7pObt6e") ;
+}
+
+
+h2{
+  font-size: 1.5vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0;
+  margin-left: 0.5vw;
+}
+h3{
+  color:red;
+  font-size:1.3vw;
+  margin-left: 0.5vw;
+  margin-top: 0.1vw;
+  margin-bottom: 0.1vw;
+}
+p{
+  font-size: 1vw;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  flex-grow: 1;
+  display: block;
+}
+a{
+  text-decoration: none;
+  color:white;
+  font-size: 1vw;
+}
+span{
+  font-size: 1vw;
+}
+.comments , .likes{
+  width: 1vw;
+  height: 1vw;
+  margin-right: 0.5vw;
+}
+
+
+.foot{
+  border-top: 1px solid lightgrey;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.button{
+  justify-self: flex-start;
+  align-items: center;
+}
+.social{
+  justify-self: flex-end;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.button{
+  background-color: red;
+  padding: 10px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+a:hover{
+  background-color: rgb(211, 36, 36);
+}
+
+
+@media(max-width:1600px){
+  .card{
+      width:27vw; 
+      height: 40vw;
+  }
+  h2{
+    font-size: 2vw;
+  }
+  h3{
+    color:red;
+    font-size:1.8vw;
+  }
+  p{
+    font-size: 1.3vw;
+  }
+  a{
+    text-decoration: none;
+    color:white;
+    font-size: 1.3vw;
+  }
+  span{
+    font-size: 1.3vw;
+  }
+  .comments , .likes{
+    width: 1.3vw;
+    height: 1.3vw;
+
+  }
+}
+@media(max-width:1290px){
+  .card{
+    width:32vw;
+    height: 52vw;
+  }
+  h2{
+    font-size: 2.5vw;
+  }
+  h3{
+    font-size:2.2vw;
+  }
+  p{
+    font-size: 1.6vw;
+  }
+  a{
+    text-decoration: none;
+    color:white;
+    font-size: 1.6vw;
+  }
+  span{
+    font-size: 1.6vw;
+  }
+  .comments , .likes{
+    width: 1.6vw;
+    height: 1.6vw;
+
+  }
+  .photo1{
+    background-image: url("https://drive.google.com/uc?export=view&id=1j_gbCvUyfM6sT2J0wNjS0RybhOPftG0Z") ;
+  }
+  .photo2{
+    background-image: url("https://drive.google.com/uc?export=view&id=1M2iDmdrarcGmHhfcNfb5SmrBCNgLLhto") ;
+  }
+  .photo3{
+    background-image: url("https://drive.google.com/uc?export=view&id=1IyL26iLen3uUs0UFKTVrMZ1HUOdYzJwT") ; 
+  }
+  .photo4{
+    background-image: url("https://drive.google.com/uc?export=view&id=1iYsgAllXjiSZ1qCu3sj8jabtGc8iFIc-") ; 
+  }
+  .photo5{
+    background-image: url("https://drive.google.com/uc?export=view&id=10u4I09KOpSDT3-_BHi6wahFehjY_hhup") ; 
+  }
+  .photo6{
+    background-image: url("https://drive.google.com/uc?export=view&id=1pu-HCOqKEDfL1pGtjQrtx7_QHxsGKolR") ; 
+  }
+  .photo7{
+    background-image: url("https://drive.google.com/uc?export=view&id=1fu2Dq9S-XkTkW2iHNU9vAFRPDR_SVRCC") ; 
+  }
+  .photo8{
+    background-image: url("https://drive.google.com/uc?export=view&id=1wjfWhUWa_T08eb_f8tDNTfJl0feWrZuf") ; 
+  }
+  .photo9{
+    background-image: url("https://drive.google.com/uc?export=view&id=1OI4WquTOzvc3FPmmFZPJgQucpJYfVYLa") ; 
+  }
+
+}
+@media(max-width:768px){
+  .card{
+    width:62vw;
+    height: 90vw;
+  }
+  h2{
+    font-size: 4.3vw;
+  }
+  h3{
+    font-size:4vw;
+  }
+  p{
+    font-size: 3.1vw;
+  }
+  a{
+    text-decoration: none;
+    color:white;
+    font-size: 3.1vw;
+  }
+  span{
+    font-size: 3.1vw;
+  }
+  .comments , .likes{
+    width: 3.1vw;
+    height: 3.1vw;
+
+  }
+  
+
+}

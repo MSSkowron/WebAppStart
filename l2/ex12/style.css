@@ -1,0 +1,431 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 10px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    background: rgb(224, 220, 220);
+}
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-rows:  auto auto 1fr auto auto;
+    gap:25px;
+    position: relative;
+}
+.container >div{
+    padding:5px;
+    border:3px solid red;
+    border-radius: 5px;
+}
+.business-card{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.photo{
+    width: 30vw;
+    height: 30vw;
+    background: url("./Przechwytywanie.PNG");
+    border:1px solid red;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.socials{
+
+}
+.name{
+    font-weight: bold;
+    font-size: 5vw;
+    margin-bottom: 0;
+}
+.profession{
+    font-size: 3vw;
+}
+.phone{
+    font-size: 3vw;
+}
+.p-img{
+    width: 3vw;
+    height:3vw;
+    margin-right: 5px;
+}
+.socials{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon > a > img{
+    width: 7vw;
+    height: 7vw;
+}
+.sec-container{
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 60px 15px 50px rgba(0,0,0,.2);
+    margin-bottom: 20px;
+}
+.circlephoto{
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    float: left;
+    shape-outside: circle();
+    margin: 0 20px 20px 0;
+}
+.p1{
+    background: url("./pexels-kamal-dagher-8605923.jpg");
+}
+.p2{
+    background: url("./pexels-mălina-sîrbu-8841727.jpg");
+}
+.p3{
+    background: url("./pexels-pepe-caspers-5401093.jpg");
+}
+.p4{
+    background: url("./pexels-robert-pügner-10124767.jpg");
+}
+.p5{
+    background: url("./pexels-yura-forrat-10161100.jpg");
+}
+.sec-container{
+    background: rgb(221, 218, 218);
+}
+.sec-container h1{
+    margin: 0 0 20px;
+    padding: 0;
+    font-size: 2rem;
+}
+.sec-container p{
+    margin: 0;
+    padding: 0;
+    line-height: 25px;
+}
+.formbox {
+    position: relative;
+    padding: 50px 50px;
+    background: rgb(221, 218, 218);
+  }
+  .formbox h1 {
+    font-size: 2em;
+    border-left: 5px solid black;
+    padding: 10px;
+    color: #000;
+    letter-spacing: 5px;
+    margin-bottom: 60px;
+    font-weight: bold;
+    padding-left: 10px;
+  }
+  .formbox .inputbox {
+    position: relative;
+    width: 300px;
+    height: 50px;
+    margin-bottom: 50px;
+  }
+  .formbox .inputbox input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 2px solid #000;
+    outline: none;
+    background: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+  }
+  .formbox .inputbox:last-child {
+    margin-bottom: 0;
+  }
+  .formbox .inputbox span {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    font-size: 1em;
+    transition: 0.6s;
+    font-family: sans-serif;
+    opacity: 0.4;
+  }
+  .formbox .inputbox input:focus ~ span,
+  .formbox .inputbox input:valid ~ span {
+    display: none;
+  }
+  .inputbox [type="button"] {
+    margin-left: 50px;
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    border: 2px solid #000;
+    background: rgb(221, 218, 218);
+    border-radius: 10px;
+    color: black;
+  }
+  .inputbox:hover [type="button"] {
+    background: linear-gradient(40deg, rgb(221, 218, 218),white);
+  }
+.button{
+    font-size: 2rem;
+    background: rgb(221, 218, 218);
+    border:2px solid black;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+.button:hover{
+    cursor: pointer;
+}
+  
+.radio-inputbox{
+  width: 49%;
+  display: inline-block; }
+
+.radio-input {
+  display: none; }
+
+.radio-label {
+    padding: 10px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem; }
+
+.radio-button {
+  padding: 10px;
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.4rem; }
+  .radio-button::after {
+    content: "";
+    display: block;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    opacity: 0;
+    transition: opacity .2s; }
+
+.radio-input:checked ~ .radio-label .radio-button::after {
+  opacity: 1; }
+@media (max-width:450px){
+    .radio-inputbox{
+        display: block;
+        margin: 40px;
+    }
+}
+@media (min-width:768px){
+    .container{
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows:  auto auto 1fr auto;
+    }
+    .header{
+        grid-column: 1 / span 12;
+    }
+    .navigation{
+        grid-column: 1 / span 12;
+    }
+    .main{
+        grid-column: 3 / span 10;
+    }
+    .sidebar{
+        grid-column: 1 / span 2;
+        grid-row:3;
+    }
+    .business-card{
+        position: sticky;
+        top:5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+    .photo{
+        width: 12vw;
+        height: 12vw;
+        background: url("./Przechwytywanie.PNG");
+        border:1px solid red;
+        background-repeat: no-repeat ;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+    }
+    .info{
+        text-align: center;
+    }
+    .ads{
+        grid-column: 1 / span 2;
+    }
+    .footer{
+        grid-column: 3 / span 10;
+    }
+    .name{
+        font-weight: bold;
+        font-size: 1.3rem;
+        margin-bottom: 0;
+    }
+    .profession{
+        font-size: 1.2rem;
+    }
+    .phone{
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .p-img{
+        width: 1.2rem;
+        height:1.2rem;
+        margin-right: 5px;
+    }
+    .icon{
+        margin-bottom: 10px;
+    }
+    .icon > a > img{
+        width: 3rem;
+        height: 3rem;
+    }
+        
+    .sec-container{
+        width: 100%;
+        padding: 20px;
+        background: rgb(221, 218, 218);
+        border-radius: 10px;
+        box-shadow: 0px 10px 10px rgba(0,0,0,.2);
+        margin-bottom: 20px;
+        border: 1px solid red;
+    }
+    .circlephoto{
+        width: 120px;
+        height: 120px;
+        background-repeat: no-repeat ;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        float: left;
+        shape-outside: circle();
+        margin: 0 25px 25px 0;
+    }
+    .sec-container h1{
+        margin: 0 0 10px;
+        padding: 0;
+        font-size: 2rem;
+    }
+    .sec-container p{
+        margin: 0;
+        padding: 0;
+        text-align: justify;
+        line-height: 25px;
+        font-size: 1.2rem;
+    }
+    .formbox {
+        position: relative;
+        padding: 50px 50px;
+        background: rgb(221, 218, 218);
+      }
+      .formbox h1 {
+        font-size: 2em;
+        border-left: 5px solid black;
+        padding: 10px;
+        color: #000;
+        letter-spacing: 5px;
+        margin-bottom: 60px;
+        font-weight: bold;
+        padding-left: 10px;
+      }
+      .formbox .inputbox {
+        position: relative;
+        width: 300px;
+        height: 50px;
+        margin-bottom: 50px;
+      }
+      .formbox .inputbox input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 2px solid #000;
+        outline: none;
+        background: none;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.2em;
+      }
+      .formbox .inputbox:last-child {
+        margin-bottom: 0;
+      }
+      .formbox .inputbox span {
+        position: absolute;
+        top: 14px;
+        left: 20px;
+        font-size: 1em;
+        transition: 0.6s;
+        font-family: sans-serif;
+      }
+      .formbox .inputbox input:focus ~ span,
+      .formbox .inputbox input:valid ~ span {
+        display: none;
+      }
+      .inputbox [type="button"] {
+        margin-left: 50px;
+        width: 100px;
+        height: 30px;
+        border: 2px solid #000;
+        background: rgb(221, 218, 218);
+        border-radius: 10px;
+        color: black;
+      }
+      .inputbox:hover [type="button"] {
+        background: linear-gradient(40deg, rgb(221, 218, 218),white);
+      }
+  
+}   
+@media (min-width:1100px){
+    .navigation{
+        grid-column: 3 / span 8;
+
+    }
+    .main{
+        grid-column: 3 / span 8;
+    }
+    .sidebar{
+        grid-row: 2 / 4 ;
+        position: sticky;
+        top:0;
+        left: 0;
+        
+    }
+    .sidebar-in{
+        position: sticky;
+        width: 100%;
+        top:0;
+        border:3px solid red;
+        border-radius: 5px;
+    }
+    .ads{
+        grid-column: 11 / span 2;
+        grid-row: 2 / 4;
+    }
+    .footer{
+        grid-column: 1 / span 12;
+    }
+    .name{
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,6 @@
+<span>Counter : {{counter}}</span>
+<app-child 
+[isDisabledButton]="isDisabledButtonClick"
+(buttonClick) ="buttonClicked()"
+(resetMe)="reset()"
+> </app-child>

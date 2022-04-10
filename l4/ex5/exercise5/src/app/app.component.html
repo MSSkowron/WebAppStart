@@ -1,0 +1,36 @@
+<nav>
+  <h1 class="header">
+    {{title}}
+  </h1>
+</nav>
+<ul class="collection" *ngIf="try()">
+  <li class="collection-item" *ngFor="let mark of marki"> 
+      <div class="badge" (click)="showChild(mark) ">
+        <span class="cursor">{{mark}}</span>
+        <ul class="models" *ngFor="let car of cars">
+          <li *ngIf="car.marka===clickMark&&car.marka===mark">
+          <div class="model" (click)="showChildren(car.model)">
+            <span class="cursor">{{car.model}}</span>
+            <ul class="colors" *ngFor="let cc of car.kolory">
+              <li class="color" *ngIf="car.model===clickModel">
+                <button 
+                class="color-btn" 
+                [style.background-color]="cc"
+                (click)="addCar(mark,car.model,cc)">
+                </button>
+              </li>
+            </ul>
+          </div>
+          </li>
+        </ul>
+      </div>
+  </li>
+</ul>
+<div class="chosen" *ngIf="chosenCar">
+    <span>You've chosen:
+      {{chosenColor}}
+      {{chosenMark}}
+      {{chosenModel}}.
+    </span>
+</div>
+

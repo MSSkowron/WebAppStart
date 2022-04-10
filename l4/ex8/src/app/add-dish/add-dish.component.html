@@ -1,0 +1,66 @@
+<h1> Dodawanie dań</h1>
+<div class="formcontainer">
+    <form [formGroup]="dishForm" (ngSubmit)="onSubmit()">
+
+        <label>
+            Nazwa:
+            <input formControlName="name" type="text" >
+        </label>
+
+        <label>
+            Kuchnia:
+            <select formControlName="cuisine">
+                <option *ngFor="let c of Dishes.cuisines" [ngValue]="c">{{c}}</option>
+            </select>
+        </label>
+
+        <label>
+            Typ:
+            <select formControlName="type">
+                <option *ngFor="let t of Dishes.types" [ngValue]="t">{{t}}</option>
+            </select>
+        </label>
+
+        <label>
+            Kategoria:
+            <select formControlName="category">
+                <option *ngFor="let cat of Dishes.categories" [ngValue]="cat">{{cat}}</option>
+            </select>
+        </label>
+
+        <label>
+            Maksymalna ilość:
+            <input formControlName="quantity" type="number" >
+        </label>
+
+        <label>
+            Cena:
+            <input formControlName="price" type="number" >
+        </label>
+
+        <label for="description">Opis:</label>
+        <textarea formControlName="description" name="description" id="description" cols="10" rows="3"></textarea>
+
+        <div formArrayName="ingredients" *ngFor="let ingredient of ingredients.controls; let i=index" class="grouping">
+            <label>
+                Składnik:
+                <input [formControlName]="i" type="text">
+                <button class="removeS" type="button" (click)="removeIngredient(i)"  id="remove_ingredient">X</button>
+            </label>
+        </div>
+        <div><button type="button" (click)="addIngredient()">Dodaj składnik</button></div>
+
+        <div formArrayName="images" *ngFor="let image of images.controls; let j=index" class="grouping">
+            <label>
+                Zdjęcie:
+                <input [formControlName]="j" type="text">
+                <button class="removeS" type="button" (click)="removeImage(j)"  id="remove_ingredient">X</button>
+            </label>
+        </div>
+        <div><button type="button" (click)="addImage()">Dodaj zdjęcie</button></div>
+
+        <div><button type="submit" id="submit_button" [disabled]="!dishForm.valid">Dodaj danie!</button><button (click)="onReset()">Zresetuj</button></div>
+
+    </form>
+</div>
+

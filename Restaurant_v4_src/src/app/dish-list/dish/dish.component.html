@@ -1,0 +1,38 @@
+<div class="dishContainer"
+    [class.bPrice]="isInMostExpensive()"
+    [class.lPrice]="isInLeastExpensive()"
+>   
+    <div class="head">
+        <div class="img" style="background-image:url({{images[0]}});"id="photo"></div>
+        <div class="procent">
+            <div class="item" id="name">{{name|uppercase}}</div>
+            <div class="item" id="cuisine">{{cuisine|uppercase}}</div>
+            <div class="item" id="category">{{category}}</div>
+            <div class="item" id="type">{{type}}</div>
+        </div>
+    </div>
+    <a class="showDetailsbtn" routerLink="/detail/{{id}}">Szczegóły</a>
+    <div class="item" id="price">Cena: {{(price*currencies.getValue()).toFixed(2)}} {{currencies.getSymbol()}}</div>
+    <div class="int">
+        <span class="quantity" *ngIf="quantity > 0"
+        [ngStyle]="{'color':quantity >3 ? 'green' : 'red'}">
+        Dostępne: {{quantity}} dań.
+        </span>
+        <span class="quantity" *ngIf="quantity===0"
+        [ngStyle]="{'color':'red'}">
+        Nie dostępne!
+        </span>
+        <button class="removeButton"
+        [disabled]="notInShopList()"
+        (click)="remove()"
+        >
+            -
+        </button>
+        <button class="addButton"
+        (click)="add()"
+        [disabled]="quantity===0"
+        >
+            +
+        </button>
+    </div>
+</div>

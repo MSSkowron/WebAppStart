@@ -1,0 +1,88 @@
+#persistence {
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+    background: #333;
+    max-width: 500px;
+    padding: 5px;
+    border: 3px solid white;
+    box-shadow: 1px 1px 10px;
+    color:white;
+  }
+  h3{
+    font-size: 1.3rem;
+  }
+  h2{
+    font-size: 2.5rem;
+  }
+  button {
+    margin: 5px 10px;
+    background-color: white;
+    font-size: 1rem;
+    border: 2px solid rgb(68, 68, 68);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #333;
+    color:white;
+    border-color: white;
+  }
+  
+  #userContainer {
+    max-width: 1200px;
+    width: 90vw;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .userBox {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin: 10px;
+    border: 3px solid white;
+    box-shadow: 1px 1px 10px;
+    color: white;
+    padding: 5px;
+  }
+  
+  .banSection {
+    display: flex;
+    align-items: center;
+  }
+  
+  h4, h5 {
+    margin: 5px;
+  }
+  
+  .roles {
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  .formGroup{
+    display: flex;
+    gap:10px;
+  }
+
+  input:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 720px) {
+    .userBox {
+      flex-direction: column;
+      row-gap: 10px;
+    }
+  }
+@media(max-width:600px){
+  #persistence{
+    margin-top: 150px;
+  }
+}

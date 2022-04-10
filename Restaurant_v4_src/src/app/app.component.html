@@ -1,0 +1,18 @@
+<nav>
+    <div class="routes" id="one">
+        <a routerLink="/home">GŁÓWNA</a>
+        <a routerLink="/dishes">DANIA</a>
+        <a *ngIf="
+        this.authService.userDetails && this.authService.checkIfHasRole(this.authService.userDetails.uid, ['Admin', 'Manager'])" routerLink="/addDish">ZARZĄDZANIE DANIAMI</a>
+        <a *ngIf="authService.userDetails" routerLink="/shopList">KOSZYK</a>
+        <a *ngIf="
+        this.authService.userDetails && this.authService.checkIfHasRole(this.authService.userDetails.uid, ['Admin', 'Manager'])" routerLink="/adminView">ADMIN</a>
+    </div>
+    <div class="routes" id="two">
+        <a *ngIf="!authService.userDetails" routerLink="/signUp">Sign Up</a>
+        <a *ngIf="!authService.userDetails" routerLink="/signIn">Sign In</a>
+        <a *ngIf="authService.userDetails" routerLink="/userProfile">{{authService.userDetails.displayName}}</a>
+        <a *ngIf="authService.userDetails" (click)="logout()">Log out</a>
+    </div>
+</nav>
+<router-outlet class="x"></router-outlet>

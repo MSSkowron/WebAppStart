@@ -1,0 +1,48 @@
+<div id="persistence">
+    <h3>Ustaw opcje persystencji</h3>
+    <button id="local" class="form-check-input" (click)="setPersistence(0)">Local</button>
+    <button id="session" class="form-check-input" (click)="setPersistence(1)">Session</button>
+    <button id="none" class="form-check-input" (click)="setPersistence(2)">None</button>
+    <h3 *ngIf="this.authService.currentPersistence != undefined">Obecnie: {{this.persistenceNames[this.authService.currentPersistence]}}</h3>
+</div>
+
+
+<div id="userContainer">
+    <h2>Użytkownicy</h2>
+    <div class="userBox"
+         *ngFor="let user of this.authService.usersList"
+         [ngStyle]="{'background-color': user.isBanned === true ? 'red' : '#333'}">
+      <div class="userInfo">
+        <h4>Nazwa: {{user.displayName}}</h4>
+        <h5>ID: {{user.uid}}</h5>
+        <h5>email: {{user.email}}</h5>
+      </div>
+      <div class="roles">
+        <div class="formGroup">
+          <input type="checkbox"  class="form-check-input"
+                 [defaultChecked]="this.authService.checkIfHasRole(user.uid, ['Client'])"
+                 (change)="changeRoles(user, 'Client')"
+                 #userRoleMenager>
+          <label  class="form-check-label">Client</label>
+          <input type="checkbox" class="form-check-input"
+                 [defaultChecked]="this.authService.checkIfHasRole(user.uid, ['Manager'])"
+                 (change)="changeRoles(user, 'Manager')"
+                 #userRoleAdmin>
+          <label  class="form-check-label">Manager</label>
+          <input type="checkbox" class="form-check-input"
+                 [defaultChecked]="this.authService.checkIfHasRole(user.uid, ['Admin'])"
+                 (change)="changeRoles(user, 'Admin')"
+                 #userRoleAdmin>
+          <label  class="form-check-label">Admin</label>
+        </div>
+      </div>
+      <div class="banSection">
+        <input type="checkbox" class="form-check-input"
+               [defaultChecked]="user.isBanned"
+               (change)="changeBanStatus(user)"
+               #userRoleMenager>
+        <label class="form-check-label">Zbanowany</label>
+      </div>
+    </div>
+  </div>
+  
